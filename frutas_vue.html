@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hola mundo con Vue.js</title>
+    <link href="css/bulma_style.css" rel="stylesheet">
   </head>
   <body>
-    <div id="app">
-      <h1>{{titulo}}</h1>
+    <div id="app" style="text-align: center; margin: auto;">
+      <h1 class="tit">{{titulo}}</h1>
 
       <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta" v-if="">
       <button @click="agregarFruta">Agregar</button>
@@ -18,11 +19,11 @@
           <input type="number" v-model.number="fruta.cantidad">
           <input type="text" v-model="fruta.nombre">          
           <!--{{fruta.nombre}}-->
-          <button @click="fruta.cantidad = fruta.cantidad + 1">+</button>
+          <button class="btn" @click="fruta.cantidad = fruta.cantidad + 1">+</button>
           <span v-if="fruta.cantidad === 0"> - Sin Stock</span>
         </li>
       </ul>
-      <h4 :class="">TOTAL: {{sumarFrutas}}</h4>
+      <h4 class="total">TOTAL: {{sumarFrutas}}</h4>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/frutillas.js"></script>
